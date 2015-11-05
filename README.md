@@ -1,2 +1,2 @@
 # photo-sharing
-A photo sharing Rails application
+A photo sharing application built in Rails
