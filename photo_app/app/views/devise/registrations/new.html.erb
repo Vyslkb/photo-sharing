@@ -16,14 +16,20 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
+   <div class="field">
+    <%= f.label :about %><br />
+    <%= f.text_area :about, autocomplete: "off" %>
+  </div>
+
+    <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>

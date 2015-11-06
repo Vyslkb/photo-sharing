@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   # resources :posts
   root 'posts#index'
-
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -87,4 +86,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  # get "*path", render "shared/404"
 end
