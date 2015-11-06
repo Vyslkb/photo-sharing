@@ -1,9 +1,44 @@
 class PostsController < ApplicationController
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
- 
-  def index
-  	@posts = "Hello"
-  end
+    before_action :set_user
+
+
+    def index
+        @posts = Post.all
+        @users = User.all
+    end
+
+    def show
+
+        @posts = User.find(params[:id]).posts
+    end
+
+    def create
+        caption = post_params[:caption]
+        photo = post_params[:photo]
+        @post = Post.create(:caption => caption, :photo => photo, :user_id => @user.id)
+        redirect_to '/'
+    end
+
+    def new
+        @post = Post.new
+        # binding.pry
+    end
+
+    def destroy
+        @post = Post.find(params[:id])
+        @post.destroy 
+        redirect_to posts_path 
+    end
+
+
+    private
+
+    def set_user
+        @user = User.find_by(id: current_user.id)
+    end
+
+    def post_params
+        params.require(:post).permit(:caption, :photo)
+    end
 
 end

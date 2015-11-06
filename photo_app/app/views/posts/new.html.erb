@@ -1,0 +1,7 @@
+<%= form_for @post, :html => { :multipart => true} do |f| %>
+<p>
+    <%= f.text_area :caption, :rows => 10, :cols => 50 %>
+    <%= f.file_field :photo %>
+</p>
+<p><%= f.submit "Submit" %></p>
+<%end%>
