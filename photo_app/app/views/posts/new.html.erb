@@ -3,5 +3,6 @@
     <%= f.text_area :caption, :rows => 10, :cols => 50 %>
     <%= f.file_field :photo %>
 </p>
+<div><%= flash[:error] %></div>
 <p><%= f.submit "Submit" %></p>
 <%end%>
