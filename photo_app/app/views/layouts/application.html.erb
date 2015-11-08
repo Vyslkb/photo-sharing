@@ -8,25 +8,60 @@
 </head>
 <body>
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
 
-<p class="top-bar navbar-text pull-right">
-<%= link_to 'home', posts_path %> 
-<% if user_signed_in? %>
-  Logged in as <strong><%= link_to "@" + current_user.email.split("@")[0], '/users/' + current_user.id.to_s + '/posts'%></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+  <div class="contain-to-grid fixed">   
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1>
+           <%= link_to 'Carousel', posts_path%> 
+          </h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+        <% if user_signed_in? %>
+          <li>
+            <strong><%= link_to "New Post", new_post_path, :class => 'post-link' %></strong>
+          </li>
+          <li>
+            <strong><%= link_to "@" + current_user.email.split("@")[0], '/users/' + current_user.id.to_s + '/posts', :class => 'navbar-link'%>
+            </strong>
+          </li>
+              <li>
+                <strong><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></strong>
+              </li> 
+              <li>
+                <strong><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></strong>
+              </li>
+            </ul>
+          </li>
+          <% else %>
+          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+        <% end %> 
+      </section>
+    </nav>
+  </div>
 
-<%= yield %>
+  <div id="container">
+    <%= yield %>
+  </div>
+
+    <!-- Page Footer -->
+  <div class="row">
+    <hr>
+      <div class="large-4 large-centered columns">      
+        <p>&copy; 2015 Carousel - By David Druker.</p>
+      </div>    
+  </div><!-- End Page Footer -->
+
 
 </body>
 </html>
