@@ -15,7 +15,7 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
-<p class="navbar-text pull-right">
+<p class="top-bar navbar-text pull-right">
 <%= link_to 'home', posts_path %> 
 <% if user_signed_in? %>
   Logged in as <strong><%= link_to "@" + current_user.email.split("@")[0], '/users/' + current_user.id.to_s + '/posts'%></strong>.
