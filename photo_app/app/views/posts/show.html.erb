@@ -1,7 +1,8 @@
-<% @posts.each do |post| %>
-		<%= image_tag post.photo.url(:medium) %>
+<% @posts.reverse.each do |post| %>
+		<br>
 		<div><% @user = User.find_by(id: post.user_id)%></div>
-		<div><%=link_to "@" + @user.email.split("@")[0], post_path(@user.id)%><div>
+		<div><%=link_to "@" + @user.email.split("@")[0], '/users/' + @user.id.to_s + '/posts'%><div>
+		<%= image_tag post.photo.url(:medium) %>
 		<div><%= post.caption %></div>
 		<div><%= post.created_at %></div>
 

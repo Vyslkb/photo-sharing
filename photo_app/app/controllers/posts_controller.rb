@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     end
 
     def show
-        
+        # binding.pry
         @posts = User.find(params[:id]).posts
     end
 
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
         caption = post_params[:caption]
         photo = post_params[:photo]   
         if photo.blank? != false
-            flash[:error] = 'This is a photo sharing app. Come on'
+            flash[:error] = 'This is a photo sharing app. Come on.'
             binding.pry 
             redirect_to new_post_path
         else

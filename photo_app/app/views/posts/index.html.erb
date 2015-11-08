@@ -1,6 +1,6 @@
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
 		<div><% @user = User.find_by(id: post.user_id)%></div>
-		<div><%=link_to "@" + @user.email.split("@")[0], post_path(@user.id)%><div>
+		<div><%=link_to "@" + @user.email.split("@")[0], '/users/' + @user.id.to_s + '/posts'%><div>
 		<div><%= post.caption %></div>
  		 <%= image_tag post.photo.url(:medium) %>	
 <%end%>
