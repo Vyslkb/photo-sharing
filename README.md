@@ -1,4 +1,4 @@
-# photo-sharing
+# Project 2: photo-sharing app
 A photo sharing application built in Ruby on Rails v. 4
 This app allows users to upload their photos with a comment in a simple and intuitive interface.
 
