@@ -1,8 +1,11 @@
 <%= form_for @post, :html => { :multipart => true} do |f| %>
-<p>
-    <%= f.text_area :caption, :rows => 5, :cols => 30 %>
-    <%= f.file_field :photo %>
-</p>
-<div><%= flash[:error] %></div>
-<p><%= f.submit "Submit" %></p>
+	<p>
+	    <%= f.text_area :caption, :rows => 2, :cols => 30%>
+	    <%= f.file_field :photo %>
+	</p>
+	<div>
+		<%= flash[:error] %>
+	</div>
+	<button type="submit" class="button round">Create Post</button>
+
 <%end%>

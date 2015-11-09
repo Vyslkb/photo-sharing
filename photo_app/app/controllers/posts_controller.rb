@@ -16,8 +16,7 @@ class PostsController < ApplicationController
         caption = post_params[:caption]
         photo = post_params[:photo]   
         if photo.blank? != false
-            flash[:error] = 'This is a photo sharing app. Come on.'
-            binding.pry 
+            flash[:error] = 'You know this is a photo sharing app.  Attach a pic.'
             redirect_to new_post_path
         else
         @post = Post.create(:caption => caption, :photo => photo, :user_id => @user.id)
