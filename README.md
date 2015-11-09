@@ -9,14 +9,13 @@ The app utilizes RESTful routing and authentication so users can create unique a
 Technologies Used:
 -Ruby on Rails
 
--Devise for Authentication and RESTful routes. [a link](https://github.com/plataformatec/devise)
+-Devise[a link](https://github.com/plataformatec/devise) for Authentication and RESTful routes.
 
--Paperclip for photo file attachment management for ActiveRecord-[a link](https://github.com/thoughtbot/paperclip)
+-Paperclip[a link](https://github.com/thoughtbot/paperclip) for photo file attachment management for ActiveRecord
 
 -CSS(Frameworks: Foundation.css, Normalize.css)
 
 -JavScript(jQuery, Foundation.js)
 
 
-Below is a link to some original wireframes:
-https://drive.google.com/folderview?id=0B1RDzOa0Wpo6c09YSjd5T0FaMTA&usp=sharing
+A link to some original wireframes: http://bit.ly/1kFia8D
