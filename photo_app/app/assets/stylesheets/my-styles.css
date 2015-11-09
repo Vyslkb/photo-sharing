@@ -1,16 +1,35 @@
 #container {
 	padding: 50px 20px 0;
 	margin-bottom: 40px;
+	text-align: center;
 }
 
 
+
 .navbar-link{
+	font-family: 'Dosis', sans-serif;
 }
 
 .post-link{
 	color: white;
+	font-family: 'Dosis', sans-serif;
 }
 
 .name{
 	font-size: 2em;
+}
+
+body{
+	font-family: 'Slabo 27px', serif;
+	background-color: ##FAFAFA;
+
+}
+
+#logo{
+	font-family: 'Dosis', sans-serif;
+}
+
+#field {
+	margin-left: auto;
+	margin-right: auto;
 }

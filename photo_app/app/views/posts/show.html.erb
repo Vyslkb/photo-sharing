@@ -1,15 +1,14 @@
 <% @posts.reverse.each do |post| %>
-		<br>
+		<div class="show-page">
 		<div><% @user = User.find_by(id: post.user_id)%></div>
 		<div><%=link_to "@" + @user.email.split("@")[0], '/users/' + @user.id.to_s + '/posts'%><div>
-		<%= image_tag post.photo.url(:medium) %>
+		<div><%= image_tag post.photo.url(:medium), :class => "th" %></div>
 		<div><%= post.caption %></div>
-		<div><%= post.created_at %></div>
-
-		<% if current_user.id == post.user_id %>
-		<%= link_to 'Delete', post, :method => 'delete', data: { confirm: "Are you sure you want to delete this post? "} %>
+		<div><%= post.created_at.to_formatted_s(:short) %></div>
+		<%if current_user.id == post.user_id %>
+		<%=link_to 'Delete', post, :method => 'delete', data: { confirm: "Are you sure you want to delete this post? "}%><br>
 		<%end%>
+		</div>
+<%end%>
 
-	<%end%>
 
-	<div><%= link_to "New Post", new_post_path %></div>
