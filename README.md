@@ -7,6 +7,7 @@ Development Story:
 The app utilizes RESTful routing and authentication so users can create unique and editable profiles.  A user can successfully create and delete their own posts and view posts uploaded by other users but without write permissions.  
 
 Technologies Used:
+
 -Ruby on Rails
 
 -[Devise](https://github.com/plataformatec/devise) for Authentication and RESTful routes.
